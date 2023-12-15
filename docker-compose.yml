@@ -1,0 +1,12 @@
+services:
+  talana_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HOME=/home/talana
+    volumes:
+      - .:/home/talana/app
+    ports:
+      - "8080:8080"
+    command: flask run --debug --host=0.0.0.0 --port=8080
